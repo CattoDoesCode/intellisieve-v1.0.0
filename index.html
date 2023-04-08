@@ -85,9 +85,9 @@
                             </a>
                         </li>
                         <br><br><br>
-                        <button type="button" class="btn btn-outline-dark mt-5"><span><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <button type="button" class="btn btn-outline-dark mt-5" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"><span><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                                 </svg></span> Post a Job</button>
@@ -118,7 +118,6 @@
             <div class="col-lg-8 p-4" style="padding-bottom: 0!important;">
                 <div class="col">
                     <div class="row">
-
                     </div>
                 </div>
 
@@ -239,7 +238,7 @@
 
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="card" style="width: 12rem;height: 12rem;">
+                        <div class="card job-seeker-card" style="width: 12rem;height: 12rem;">
                             <div class="col card-body">
                                 <div class="row">
                                     <div class="col align-items-center">
@@ -302,7 +301,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="card" style="width: 12rem;height: 12rem;">
+                        <div class="card job-seeker-card" style="width: 12rem;height: 12rem;">
                             <div class="col card-body">
                                 <div class="row">
                                     <div class="col align-items-center">
@@ -365,7 +364,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="card" style="width: 12rem;height: 12rem;">
+                        <div class="card job-seeker-card" style="width: 12rem;height: 12rem;">
                             <div class="col card-body">
                                 <div class="row">
                                     <div class="col align-items-center">
@@ -428,7 +427,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="card" style="width: 12rem;height: 12rem;">
+                        <div class="card job-seeker-card" style="width: 12rem;height: 12rem;">
                             <div class="col card-body">
                                 <div class="row">
                                     <div class="col align-items-center">
@@ -536,10 +535,10 @@
                     <div class="card-body text-center d-flex align-items-center">
                         <div class="col text-center">
                             <div class="row text-center">
-                                <div class="col text-end" style="padding:0!important;">
+                                <div class="col-lg-7 text-end" style="padding:0!important;">
                                     <p class="display-5 counter" data-target="100"></p>
                                 </div>
-                                <div class="col text-start" style="padding:0!important;">
+                                <div class="col-lg-5 text-start" style="padding:0!important;">
                                     <p class="display-5">%</p>
                                 </div>
 
@@ -551,6 +550,83 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Post a Job Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Job Opening</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="padding-bottom: 0;">
+                            <div class="container-fluid">
+                                <div class="col">
+                                    <div class="row">
+                                        <label for="txt-title" class="form-label" style="padding-left: 0;">Job
+                                            Title</label>
+                                        <input type="text" class="form-control" id="txt-title" placeholder="">
+                                    </div>
+                                    <div class="row mt-3">
+                                        <label for="txt-desc" class="form-label" style="padding-left: 0;">Job
+                                            Description</label>
+                                        <textarea class="form-control" id="txt-desc" rows="3" placeholder=""></textarea>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col" style="padding-left: 0;">
+                                            <label for="txt-company" class="form-label">Company</label>
+                                            <input type="text" class="form-control" id="txt-company" placeholder="">
+                                        </div>
+                                        <div class="col" style="padding-left: 0;">
+                                            <label for="txt-location" class="form-label">Location</label>
+                                            <input type="text" class="form-control" id="txt-location" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <label for="chip-input" class="form-label" style="padding-left: 0;">Skills
+                                            Required</label>
+                                        <input type="text" class="form-control" id="chip-input">
+                                        <div id="chip-container"></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col" style="padding-left: 0;">
+                                            <label for="txt-company" class="form-label">Employment Type</label>
+                                            <select class="form-select">
+                                                <option selected>Full-time</option>
+                                                <option value="1">Part-time</option>
+                                                <option value="2">Contract</option>
+                                            </select>
+                                        </div>
+                                        <div class="col" style="padding-left: 0;">
+                                            <label for="txt-location" class="form-label">Education Level</label>
+                                            <select class="form-select">
+                                                <option selected>None</option>
+                                                <option value="1">High School</option>
+                                                <option value="2">Bachelors</option>
+                                                <option value="3">Masters</option>
+                                                <option value="4">Dotorate</option>
+                                            </select>
+                                        </div>
+                                        <div class="col" style="padding-left: 0;">
+                                            <label for="txt-location" class="form-label">Years of Experience</label>
+                                            <input type="number" class="form-control" id="num-years" placeholder="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-3">
+                            <button type="button" class="btn btn-outline-dark" style="width: 100%;"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pin" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                    <path
+                                        d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354zm1.58 1.408-.002-.001.002.001zm-.002-.001.002.001A.5.5 0 0 1 6 2v5a.5.5 0 0 1-.276.447h-.002l-.012.007-.054.03a4.922 4.922 0 0 0-.827.58c-.318.278-.585.596-.725.936h7.792c-.14-.34-.407-.658-.725-.936a4.915 4.915 0 0 0-.881-.61l-.012-.006h-.002A.5.5 0 0 1 10 7V2a.5.5 0 0 1 .295-.458 1.775 1.775 0 0 0 .351-.271c.08-.08.155-.17.214-.271H5.14c.06.1.133.191.214.271a1.78 1.78 0 0 0 .37.282z" />
+                                </svg>Post</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
