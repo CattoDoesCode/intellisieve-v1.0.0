@@ -8,6 +8,16 @@ a {
     background-color: black !important;
 }
 
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 32px;
+}
+
 .nav-link:not(.active):hover {
     background-color: #c1c1c1 !important;
 }
@@ -22,11 +32,162 @@ a {
     transform: translateY(-5px);
 }
 
-.job-card.clicked {
+/* .job-card.clicked {
     background-color: #e5e5e5;
-}
+} */
 
 /* stats card */
 .counter {
     animation: count-up 1s ease-out forwards;
+}
+
+/* job seeker card */
+.job-seeker-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.job-seeker-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.job-seeker-card.clicked {
+    background-color: #e5e5e5;
+}
+
+/* ================================================================ jobs posted page */
+/* pagination */
+.pagination .page-link {
+    color: black;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: rgb(251, 251, 251);
+    border-color: rgb(57, 57, 57);
+}
+
+.pagination .page-link:focus {
+    box-shadow: none;
+}
+
+/* modal */
+.rectangle_1 {
+    border-radius: 8px;
+    height: 12px;
+    background-color: rgb(218, 218, 218);
+    animation: fill_1 1s ease-in-out;
+    animation-fill-mode: forwards;
+    width: 0%;
+}
+
+.rectangle_2 {
+    border-radius: 8px;
+    height: 12px;
+    background-color: rgb(218, 218, 218);
+    animation: fill_2 1s ease-in-out;
+    animation-fill-mode: forwards;
+    width: 0%;
+}
+
+.rectangle_3 {
+    border-radius: 8px;
+    height: 12px;
+    background-color: rgb(218, 218, 218);
+    animation: fill_3 1s ease-in-out;
+    animation-fill-mode: forwards;
+    width: 0%;
+}
+
+@keyframes fill_1 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fill_2 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 95%;
+    }
+}
+
+@keyframes fill_3 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 90%;
+    }
+}
+
+.chips {
+    display: inline-block;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin: 0.125rem;
+    border: 1px solid #ced4da;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    background-color: transparent;
+    color: #495057;
+    transition: all 0.3s;
+}
+
+.chip:hover {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    cursor: pointer;
+}
+
+.chip:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ================================================= post a job modal */
+#chip-input {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#chip-container {
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.skills-chip {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 16px;
+    padding: 5px 10px;
+    padding-left: 16px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.chip-close {
+    margin-left: 5px;
+    cursor: pointer;
 }
