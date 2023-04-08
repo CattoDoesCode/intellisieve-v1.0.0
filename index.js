@@ -1,9 +1,9 @@
 // job card click effect
-$('.card').click(function () {
-    $(this).toggleClass('clicked');
-});
+// $('.card').click(function () {
+//     $(this).toggleClass('clicked');
+// });
 
-// stats card value change animation
+// ================ stats card value change animation
 
 // Select all the counter elements
 const counters = document.querySelectorAll(".counter");
@@ -34,4 +34,28 @@ function animateValue(counter, targetValue) {
 counters.forEach(counter => {
     const targetValue = parseInt(counter.dataset.target);
     animateValue(counter, targetValue);
+});
+
+// chips input
+const chipInput = document.getElementById("chip-input");
+const chipContainer = document.getElementById("chip-container");
+
+chipInput.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+        const chipValue = this.value.trim();
+        if (chipValue !== "") {
+            const chip = document.createElement("div");
+            chip.classList.add("skills-chip");
+            chip.innerHTML = chipValue + '<span class="chip-close">&times;</span>';
+            chipContainer.appendChild(chip);
+            this.value = "";
+        }
+    }
+});
+
+chipContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("chip-close")) {
+        const chip = event.target.parentNode;
+        chipContainer.removeChild(chip);
+    }
 });
