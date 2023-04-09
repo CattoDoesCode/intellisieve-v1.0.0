@@ -156,6 +156,19 @@ a {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
+.annotation-def {
+    background-color: rgb(242, 242, 242);
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.annotation-skills.active,
+.annotation-exp.active,
+.annotation-educ.active {
+    background-color: rgb(252, 252, 113);
+}
+
+
 /* ================================================= post a job modal */
 #chip-input {
     border: 1px solid #ced4da;
